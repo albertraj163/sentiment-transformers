@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+.venv/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+.sentiment_cache/
+sentiment_results.csv
+sample_sentiment_results.csv
+.streamlit/secrets.toml
