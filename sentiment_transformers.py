@@ -1,9 +1,12 @@
 # sentiment_transformers.py
 # CLI demo — classify sentiment using Hugging Face transformers pipeline.
+from pathlib import Path
+
 from sentiment_engine import analyze_dataframe
 
-DATA_PATH = "sample_texts.csv"
-OUTPUT_PATH = "sentiment_results.csv"
+APP_DIR = Path(__file__).resolve().parent
+DATA_PATH = APP_DIR / "sample_texts.csv"
+OUTPUT_PATH = APP_DIR / "sentiment_results.csv"
 
 
 def main():

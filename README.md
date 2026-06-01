@@ -21,7 +21,9 @@ AI-powered sentiment analysis demo using **Hugging Face Transformers** (DistilBE
 | `sample_texts.csv` | Example texts for testing |
 | `requirements.txt` | Python dependencies |
 
-## Quick start
+## Quick start (local)
+
+> **Note:** The GitHub repo link is for source code only. Opening the repo URL in a browser will show a **404** for the app itself. You must run the app locally (or deploy to Streamlit Cloud).
 
 ```bash
 # Clone the repository
@@ -31,11 +33,22 @@ cd sentiment-transformers
 # Install dependencies
 pip install -r requirements.txt
 
-# Launch the web UI
+# Launch the web UI (choose one)
+./run.sh
+# or
 streamlit run app.py
 ```
 
 Open **http://localhost:8501** in your browser.
+
+### Troubleshooting 404
+
+| Problem | Fix |
+|---------|-----|
+| Opened GitHub repo URL | Run locally with `./run.sh` — app is not hosted on GitHub |
+| Page not loading | Make sure terminal shows `Local URL: http://localhost:8501` |
+| Wrong folder | Run from repo root where `app.py` exists |
+| Port busy | Use `streamlit run app.py --server.port 8502` |
 
 ## CLI usage
 

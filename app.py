@@ -4,11 +4,15 @@ Run: streamlit run app.py
 """
 
 import io
+from pathlib import Path
 
 import pandas as pd
 import streamlit as st
 
 from sentiment_engine import analyze_dataframe, analyze_text
+
+APP_DIR = Path(__file__).resolve().parent
+SAMPLE_CSV = APP_DIR / "sample_texts.csv"
 
 st.set_page_config(
     page_title="Sentiment Transformers",
@@ -215,7 +219,7 @@ with tab_batch:
 
 with tab_sample:
     st.markdown("#### Run analysis on bundled sample texts")
-    sample_df = pd.read_csv("sample_texts.csv")
+    sample_df = pd.read_csv(SAMPLE_CSV)
     st.dataframe(sample_df, use_container_width=True)
 
     if st.button("Analyze samples", type="primary", key="sample_analyze"):
