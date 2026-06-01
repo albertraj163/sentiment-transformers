@@ -14,6 +14,7 @@ from sentiment_engine import DEFAULT_MODEL, analyze_dataframe, analyze_text
 APP_DIR = Path(__file__).resolve().parent
 SAMPLE_CSV = APP_DIR / "sample_texts.csv"
 GITHUB_URL = "https://github.com/albertraj163/sentiment-transformers"
+LOCAL_APP_URL = "http://localhost:8501"
 MODEL_URL = "https://huggingface.co/distilbert-base-uncased-finetuned-sst-2-english"
 HF_DOCS_URL = "https://huggingface.co/docs/transformers/main/en/quicktour#pipeline-usage"
 
@@ -182,6 +183,7 @@ with st.sidebar:
     st.markdown("### Project")
     st.markdown(
         f"""
+        - **Local app:** [{LOCAL_APP_URL.replace('http://', '')}]({LOCAL_APP_URL})
         - **GitHub:** [{GITHUB_URL.replace('https://', '')}]({GITHUB_URL})
         - **Model:** [DistilBERT SST-2]({MODEL_URL})
         - **Docs:** [Transformers Pipeline]({HF_DOCS_URL})
