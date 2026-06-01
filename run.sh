@@ -3,10 +3,8 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
-if ! python3 -c "import streamlit" >/dev/null 2>&1; then
-  echo "Installing dependencies..."
-  pip install -r requirements.txt
-fi
+echo "Checking dependencies..."
+pip install -q -r requirements.txt
 
 find_free_port() {
   local port=8501

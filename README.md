@@ -49,6 +49,7 @@ Open **http://localhost:8501** in your browser.
 | Page not loading | Make sure terminal shows `Local URL: http://localhost:8501` |
 | Wrong folder | Run from repo root where `app.py` exists |
 | Port busy | Use `streamlit run app.py --server.port 8502` |
+| `ModuleNotFoundError: pipeline` | Run `pip install -r requirements.txt` (old Pillow breaks transformers) |
 
 ## CLI usage
 
