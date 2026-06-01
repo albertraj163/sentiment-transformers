@@ -1,55 +1,47 @@
 # Sentiment Analysis using Transformers
 
-AI-powered sentiment analysis demo using **Hugging Face Transformers** (DistilBERT) with a professional web UI.
+Professional AI sentiment analysis demo using **Hugging Face DistilBERT** with a Streamlit web UI.
 
-**Repository:** [github.com/albertraj163/sentiment-transformers](https://github.com/albertraj163/sentiment-transformers)
+| Resource | Link |
+|----------|------|
+| **GitHub Repository** | https://github.com/albertraj163/sentiment-transformers |
+| **Hugging Face Model** | https://huggingface.co/distilbert-base-uncased-finetuned-sst-2-english |
+| **Local App URL** | http://localhost:8501 |
 
 ## Features
 
-- **Web UI** — Modern Streamlit interface with single-text, batch CSV, and sample analysis
-- **DistilBERT** — Fast, accurate sentiment classification (POSITIVE / NEGATIVE)
-- **Batch processing** — Upload CSV files and download results
-- **CLI script** — Original command-line workflow still supported
+- **Web UI** — Clean Streamlit dashboard for single text, batch CSV, and sample analysis
+- **DistilBERT SST-2** — Fast POSITIVE / NEGATIVE classification with confidence scores
+- **Batch processing** — Upload CSV, view metrics, download results
+- **CLI script** — Command-line workflow for automation
 
-## Files
+## Quick start
+
+```bash
+git clone https://github.com/albertraj163/sentiment-transformers.git
+cd sentiment-transformers
+pip install -r requirements.txt
+./run.sh
+```
+
+Then open the URL printed in your terminal (usually **http://localhost:8501**).
+
+Alternative:
+
+```bash
+streamlit run app.py
+```
+
+## Project structure
 
 | File | Description |
 |------|-------------|
 | `app.py` | Streamlit web application |
 | `sentiment_engine.py` | Shared sentiment analysis engine |
-| `sentiment_transformers.py` | CLI script for batch analysis |
-| `sample_texts.csv` | Example texts for testing |
+| `sentiment_transformers.py` | CLI batch script |
+| `sample_texts.csv` | Example dataset |
+| `run.sh` | One-command local launcher |
 | `requirements.txt` | Python dependencies |
-
-## Quick start (local)
-
-> **Note:** The GitHub repo link is for source code only. Opening the repo URL in a browser will show a **404** for the app itself. You must run the app locally (or deploy to Streamlit Cloud).
-
-```bash
-# Clone the repository
-git clone https://github.com/albertraj163/sentiment-transformers.git
-cd sentiment-transformers
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Launch the web UI (choose one)
-./run.sh
-# or
-streamlit run app.py
-```
-
-Open **http://localhost:8501** in your browser.
-
-### Troubleshooting 404
-
-| Problem | Fix |
-|---------|-----|
-| Opened GitHub repo URL | Run locally with `./run.sh` — app is not hosted on GitHub |
-| Page not loading | Make sure terminal shows `Local URL: http://localhost:8501` |
-| Wrong folder | Run from repo root where `app.py` exists |
-| Port busy | Use `streamlit run app.py --server.port 8502` |
-| `ModuleNotFoundError: pipeline` | Run `pip install -r requirements.txt` (old Pillow breaks transformers) |
 
 ## CLI usage
 
@@ -57,14 +49,27 @@ Open **http://localhost:8501** in your browser.
 python sentiment_transformers.py
 ```
 
-Reads `sample_texts.csv` and writes results to `sentiment_results.csv`.
+Reads `sample_texts.csv` and writes `sentiment_results.csv`.
+
+## Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| GitHub repo shows no app UI | Run locally with `./run.sh` — GitHub hosts code, not the live UI |
+| Port already in use | `run.sh` auto-picks the next free port |
+| `ModuleNotFoundError: pipeline` | Run `pip install -r requirements.txt` |
+| Terminal torchvision warnings | Harmless; disabled via Streamlit file watcher config |
 
 ## Tech stack
 
-- [Hugging Face Transformers](https://huggingface.co/docs/transformers) — `distilbert-base-uncased-finetuned-sst-2-english`
-- [Streamlit](https://streamlit.io) — Web UI (free & open source)
-- [PyTorch](https://pytorch.org) — Deep learning backend
-- [Pandas](https://pandas.pydata.org) — Data handling
+- [Hugging Face Transformers](https://huggingface.co/docs/transformers)
+- [DistilBERT SST-2 model](https://huggingface.co/distilbert-base-uncased-finetuned-sst-2-english)
+- [Streamlit](https://streamlit.io)
+- [PyTorch](https://pytorch.org)
+
+## Author
+
+**Albert Raj** — https://github.com/albertraj163
 
 ## License
 

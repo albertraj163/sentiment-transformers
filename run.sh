@@ -17,5 +17,6 @@ find_free_port() {
 PORT="$(find_free_port)"
 
 echo "Starting Sentiment Transformers UI..."
-echo "Open: http://localhost:${PORT}"
-exec streamlit run app.py --server.address 0.0.0.0 --server.port "$PORT"
+echo "Local app : http://localhost:${PORT}"
+echo "GitHub repo: https://github.com/albertraj163/sentiment-transformers"
+exec streamlit run app.py --server.address 0.0.0.0 --server.port "$PORT" --server.fileWatcherType none
